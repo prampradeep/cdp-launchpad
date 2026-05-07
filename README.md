@@ -10,7 +10,9 @@ A lightweight, Cloudera-branded Streamlit application that centralises all CDP p
 
 ### Step 1: Upload the below files onto a Cloudera AI Project. 
 - app.py
+- config.yaml
 - launch_app.py
+- prefs.json
 - requirements.txt
 
 ### Step 2: Create Application 
@@ -19,7 +21,7 @@ Create an Application in the Cloudera AI by navigating to Applications and click
 
 Provide a Name and subdomain to be used for the application 
 
-choose the **launch_app.py** as the script, ensure the app.py path is referenced correctly.
+choose the **launch_app.py** as the script, 
 
 choose a runtime (3.9,3.10 etc.) and resource profile (2VCPU/4GB) 
 
@@ -28,4 +30,10 @@ Click on **Create Application**
 ### Step 3: Launch Application 
 
 Once the application state is changed to Running, Click on the application or use https://subdomain.workspacedomainname.
+
+# Troubleshooting Tips 
+
+Ensure the below if you run into issues 
+- ensure the app.py path is referenced correctly
+- Open a session and do pip3 install -r requirements.txt before you restart the application again.
 
