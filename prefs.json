@@ -1,0 +1,10 @@
+{
+  "title": "Cloudera Launchpad",
+  "subtitle": "All your Cloudera Service URLs in one place",
+  "theme": "light",
+  "accent_color": "#FF6D2A",
+  "font_size": "medium",
+  "font_family": "system",
+  "compact": true,
+  "show_descriptions": true
+}

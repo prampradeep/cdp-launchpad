@@ -1,0 +1,196 @@
+# CDP Launchpad — Configuration
+# ─────────────────────────────────────────────────────────────────────────────
+# Edit this file to manage environments, service URLs, and UI appearance.
+# No code changes needed.
+#
+# Layout rules (automatic):
+#   ≤ 3 environments → side-by-side columns
+#   4+ environments  → tabs (one per environment)
+#
+# Secret interpolation: use ${ENV_VAR_NAME} anywhere in this file.
+# ─────────────────────────────────────────────────────────────────────────────
+
+app:
+  title: "CDP Launchpad"
+  subtitle: "All your Cloudera Data Platform services in one place"
+
+# ── UI Customisation ──────────────────────────────────────────────────────────
+ui:
+  # These are the startup defaults. Any setting saved via the ⚙️ button
+  # in the app is written to prefs.json and overrides these values.
+  theme: light              # light | dark
+  font_size: medium         # small | medium | large
+  font_family: system       # system (sans-serif) | mono | serif
+  accent_color: "#FF6D2A"   # hex — buttons, hover borders, highlights
+  compact: false            # true → tighter card padding and spacing
+  show_descriptions: true   # false → hide the description line on each card
+
+# ── Environments ──────────────────────────────────────────────────────────────
+# Fields:
+#   id      - unique key (no spaces)
+#   name    - display name shown in the header
+#   color   - hex accent for this environment's badge and header strip
+#   badge   - short label shown in the coloured pill (defaults to first 3 chars)
+#   services - list of services to show in this environment
+#     name         - display name
+#     icon         - emoji shown on the card
+#     description  - one-line description (hidden when ui.show_descriptions: false)
+#     url          - the full URL; leave empty ("") to show as "Not configured"
+#     enabled      - set to false to hide a service without deleting it (default: true)
+
+environments:
+  - id: prod
+    name: Production
+    color: "#00C896"
+    badge: PROD
+    services:
+      - name: Management Console
+        icon: "🖥️"
+        description: "Central control plane for your CDP environment"
+        url: "https://console.prod.cloudera.example.com"
+      - name: Cloudera Manager
+        icon: "⚙️"
+        description: "Cluster management and configuration"
+        url: "https://cm.prod.cloudera.example.com:7180"
+      - name: Data Catalog
+        icon: "🗂️"
+        description: "Metadata management and data discovery"
+        url: "https://catalog.prod.cloudera.example.com"
+      - name: Query Editor (Hue)
+        icon: "🔍"
+        description: "Interactive SQL editor powered by Apache Hue"
+        url: "https://hue.prod.cloudera.example.com"
+      - name: Data Flow (NiFi)
+        icon: "🌊"
+        description: "Apache NiFi data ingestion and routing"
+        url: "https://dataflow.prod.cloudera.example.com"
+      - name: Machine Learning
+        icon: "🤖"
+        description: "Cloudera AI Workbench (CML)"
+        url: "https://cml.prod.cloudera.example.com"
+      - name: Data Engineering
+        icon: "🔧"
+        description: "Apache Spark pipeline orchestration (CDE)"
+        url: "https://cde.prod.cloudera.example.com"
+      - name: Data Warehouse
+        icon: "🏛️"
+        description: "Cloud-native analytical data warehouse (CDW)"
+        url: "https://cdw.prod.cloudera.example.com"
+      - name: Streaming (Kafka)
+        icon: "📨"
+        description: "Apache Kafka real-time event streaming"
+        url: "https://kafka.prod.cloudera.example.com"
+      - name: Ranger Security
+        icon: "🛡️"
+        description: "Access control, policies, and audit"
+        url: "https://ranger.prod.cloudera.example.com"
+      - name: Atlas Lineage
+        icon: "🔗"
+        description: "Data lineage, classification, and governance"
+        url: "https://atlas.prod.cloudera.example.com"
+      - name: YARN Resource Manager
+        icon: "🔄"
+        description: "Cluster resource management and job monitoring"
+        url: "https://rm.prod.cloudera.example.com:8088"
+      - name: Spark History Server
+        icon: "⚡"
+        description: "Spark application history and logs"
+        url: "https://shs.prod.cloudera.example.com:18088"
+      - name: Resource Monitoring
+        icon: "📊"
+        description: "Cluster health, metrics, and resource usage"
+        url: "https://monitoring.prod.cloudera.example.com"
+      - name: Data Visualization
+        icon: "📈"
+        description: "Interactive BI dashboards and analytics"
+        url: "https://dataviz.prod.cloudera.example.com"
+        enabled: true   # set to false to hide without deleting
+
+  - id: dev
+    name: Development
+    color: "#3B9EFF"
+    badge: DEV
+    services:
+      - name: Management Console
+        icon: "🖥️"
+        description: "Central control plane for your CDP environment"
+        url: "https://console.dev.cloudera.example.com"
+      - name: Cloudera Manager
+        icon: "⚙️"
+        description: "Cluster management and configuration"
+        url: "https://cm.dev.cloudera.example.com:7180"
+      - name: Query Editor (Hue)
+        icon: "🔍"
+        description: "Interactive SQL editor powered by Apache Hue"
+        url: "https://hue.dev.cloudera.example.com"
+      - name: Data Flow (NiFi)
+        icon: "🌊"
+        description: "Apache NiFi data ingestion and routing"
+        url: "https://dataflow.dev.cloudera.example.com"
+      - name: Machine Learning
+        icon: "🤖"
+        description: "Cloudera AI Workbench (CML)"
+        url: "https://cml.dev.cloudera.example.com"
+      - name: Data Engineering
+        icon: "🔧"
+        description: "Apache Spark pipeline orchestration (CDE)"
+        url: "https://cde.dev.cloudera.example.com"
+      - name: Ranger Security
+        icon: "🛡️"
+        description: "Access control, policies, and audit"
+        url: "https://ranger.dev.cloudera.example.com"
+      - name: Atlas Lineage
+        icon: "🔗"
+        description: "Data lineage, classification, and governance"
+        url: "https://atlas.dev.cloudera.example.com"
+      - name: YARN Resource Manager
+        icon: "🔄"
+        description: "Cluster resource management and job monitoring"
+        url: "https://rm.dev.cloudera.example.com:8088"
+      - name: Spark History Server
+        icon: "⚡"
+        description: "Spark application history and logs"
+        url: "https://shs.dev.cloudera.example.com:18088"
+
+  - id: dr
+    name: Disaster Recovery
+    color: "#F7B731"
+    badge: DR
+    services:
+      - name: Management Console
+        icon: "🖥️"
+        description: "Central control plane for your CDP environment"
+        url: "https://console.dr.cloudera.example.com"
+      - name: Cloudera Manager
+        icon: "⚙️"
+        description: "Cluster management and configuration"
+        url: "https://cm.dr.cloudera.example.com:7180"
+      - name: Query Editor (Hue)
+        icon: "🔍"
+        description: "Interactive SQL editor powered by Apache Hue"
+        url: "https://hue.dr.cloudera.example.com"
+      - name: Ranger Security
+        icon: "🛡️"
+        description: "Access control, policies, and audit"
+        url: "https://ranger.dr.cloudera.example.com"
+      - name: Atlas Lineage
+        icon: "🔗"
+        description: "Data lineage, classification, and governance"
+        url: "https://atlas.dr.cloudera.example.com"
+      - name: Resource Monitoring
+        icon: "📊"
+        description: "Cluster health, metrics, and resource usage"
+        url: "https://monitoring.dr.cloudera.example.com"
+
+# ── Adding environments ────────────────────────────────────────────────────────
+# Add another block below — the UI switches to tabs automatically above 3 envs.
+#
+#  - id: staging
+#    name: Staging
+#    color: "#A855F7"
+#    badge: STG
+#    services:
+#      - name: Cloudera Manager
+#        icon: "⚙️"
+#        description: "Cluster management and configuration"
+#        url: "https://cm.staging.cloudera.example.com:7180"
