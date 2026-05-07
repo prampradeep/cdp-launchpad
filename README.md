@@ -1,7 +1,8 @@
 # cdp-launchpad
 A lightweight, Cloudera-branded Streamlit application that centralises all CDP platform URLs — including Data Catalog, Query Editor, Data Flow, Management Console, and more — into a single dashboard organised by environment (Production, Dev, DR). Built for fast deployment on Cloudera AI Applications.
 
-<img width="1488" height="761" alt="image" src="https://github.com/user-attachments/assets/ac03a731-18da-4866-b463-cc1b844af026" />
+<img width="1436" height="763" alt="image" src="https://github.com/user-attachments/assets/1c815ac1-b3ab-4577-9487-d025a9b6c3cc" />
+
 
 
 
@@ -18,7 +19,7 @@ Create an Application in the Cloudera AI by navigating to Applications and click
 
 Provide a Name and subdomain to be used for the application 
 
-choose the **launch_app.py** as the script
+choose the **launch_app.py** as the script, ensure the app.py path is referenced correctly.
 
 choose a runtime (3.9,3.10 etc.) and resource profile (2VCPU/4GB) 
 
